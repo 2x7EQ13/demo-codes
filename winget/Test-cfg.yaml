@@ -1,0 +1,12 @@
+properties:
+  resources:
+    - resource: Microsoft.Windows.Developer/WindowsExplorer
+      directives:
+        description: Modify Windows Explorer settings
+        allowPrerelease: true
+      settings:
+        FileExtensions: Hide # [KeepCurrentValue, Hide]
+        HiddenFiles: Hide # [KeepCurrentValue, Hide]
+        ItemCheckBoxes: Hide # [KeepCurrentValue, Hide]
+        RestartExplorer: True # Use caution when setting `RestartExplorer: true` as this will force explorer to close. Required for all WindowsExplorer settings.
+  configurationVersion: 0.2.0
