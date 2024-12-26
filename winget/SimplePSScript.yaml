@@ -1,12 +1,15 @@
 properties:
   resources:
-    - resource: xPSDesiredStateConfiguration/xScript
+    - resource: PSDscResources/Script
+      id: myAppConfig
       directives:
         description: Run Powershell Command
         allowPrerelease: true
       settings:
-        GetScript: "state"
-        TestScript: $false
+        GetScript: |
+            #"state"
+        TestScript: |
+            return $false
         SetScript: |
           $logFile = "C:\Samples\winget\log.txt";
           $host = Get-Host;
