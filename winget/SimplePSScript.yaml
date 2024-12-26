@@ -1,0 +1,16 @@
+properties:
+  resources:
+    - resource: xPSDesiredStateConfiguration/xScript
+      directives:
+        description: Run Powershell Command
+        allowPrerelease: true
+      settings:
+        GetScript: "state"
+        TestScript: $false
+        SetScript: |
+          $logFile = "C:\Samples\winget\log.txt";
+          $host = Get-Host;
+          Set-Content $logFile $host;
+          $proc = Get-ExecutionPolicy
+          Add-Content $logFile -Value $proc;
+  configurationVersion: 0.2.0
